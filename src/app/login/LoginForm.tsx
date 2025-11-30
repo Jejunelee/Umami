@@ -13,7 +13,7 @@ import { useRouter } from 'next/navigation';
 import { useMessages, useUpdateQuery } from '@/components/hooks';
 import { setUser } from '@/store/app';
 import { setClientAuthToken } from '@/lib/client';
-import { Logo } from '@/components/svg';
+import Image from 'next/image';
 
 export function LoginForm() {
   const { formatMessage, labels, getErrorMessage } = useMessages();
@@ -34,9 +34,9 @@ export function LoginForm() {
   return (
     <Column justifyContent="center" alignItems="center" gap="6">
       <Icon size="lg">
-        <Logo />
+        <Image src="/mstile-150x150.png" alt="Jenafy Analytics Logo" width={64} height={64} />
       </Icon>
-      <Heading>umami</Heading>
+      <Heading>Jenafy Private Analytics</Heading>
       <Form onSubmit={handleSubmit} error={getErrorMessage(error)}>
         <FormField
           label={formatMessage(labels.username)}
