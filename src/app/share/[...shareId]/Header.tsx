@@ -1,7 +1,7 @@
 import { Row, Icon, Text, ThemeButton } from '@umami/react-zen';
+import Image from 'next/image';
 import { LanguageButton } from '@/components/input/LanguageButton';
 import { PreferencesButton } from '@/components/input/PreferencesButton';
-import { Logo } from '@/components/svg';
 
 export function Header() {
   return (
@@ -9,9 +9,9 @@ export function Header() {
       <a href="https://umami.is" target="_blank">
         <Row alignItems="center" gap>
           <Icon>
-            <Logo />
+            <Image src="/apple-touch-icon.png" alt="Jenafy Analytics Logo" width={24} height={24} />
           </Icon>
-          <Text weight="bold">umami</Text>
+          <Text weight="bold">Jenafy Analytics</Text>
         </Row>
       </a>
       <Row alignItems="center" gap>
