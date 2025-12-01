@@ -1,6 +1,5 @@
 import { Key } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   Sidebar,
   SidebarSection,
@@ -11,6 +10,7 @@ import {
   ThemeButton,
 } from '@umami/react-zen';
 import { Globe, LinkIcon, Grid2x2, PanelLeft } from '@/components/icons';
+import { Logo } from '@/components/svg';
 import { useMessages, useNavigation, useGlobalState } from '@/components/hooks';
 import { NavButton } from '@/components/input/NavButton';
 import { PanelButton } from '@/components/input/PanelButton';
@@ -48,16 +48,12 @@ export function SideNav(props: SidebarProps) {
     router.push(id === 'user' ? '/websites' : `/teams/${id}/websites`);
   };
 
-  const LogoIcon = () => (
-    <Image src="/apple-touch-icon.png" alt="Jenafy Analytics Logo" width={32} height={32} />
-  );
-
   return (
     <Sidebar {...props} isCollapsed={isCollapsed || hasNav} backgroundColor>
       <SidebarSection onClick={() => setIsCollapsed(false)}>
         <SidebarHeader
           label="Jenafy Analytics"
-          icon={isCollapsed && !hasNav ? <PanelLeft /> : <LogoIcon />}
+          icon={isCollapsed && !hasNav ? <PanelLeft /> : <Logo />}
           style={{ maxHeight: 40 }}
         >
           {!isCollapsed && !hasNav && <PanelButton />}
